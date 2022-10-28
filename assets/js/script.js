@@ -17,7 +17,8 @@ var lettersInChosenWord = [];
 var blanksLetters = [];
 
 // Array of words the user will guess
-var words = ["variable","array", "modulus", "object", "function", "string", "boolean","computer","algorithm","normalize"];
+var words = ["variable","array", "modulus", "object", "function", "string", "boolean","computer","algorithm","normalize","want","fell","well","charizard","pikachu","pokemon","harry potter",
+            "tale of the lost cities","off","let","computer","mommy","hugo","eliana","markus","smelly fart","rotten onions","up","tickle","i like warm hugs","star wars", "decorated","gold bar"];
 
 
 // The init function is called when the page loads 
