@@ -17,8 +17,7 @@ var lettersInChosenWord = [];
 var blanksLetters = [];
 
 // Array of words the user will guess
-var words = ["variable","array", "modulus", "object", "function", "string", "boolean","computer","algorithm","normalize","want","fell","well","charizard","pikachu","pokemon","harry potter",
-            "tale of the lost cities","off","let","computer","mommy","hugo","eliana","markus","smelly fart","rotten onions","up","tickle","i like warm hugs","star wars", "decorated","gold bar"];
+var words = ["variable","array", "modulus", "object", "function", "string", "boolean","computer","algorithm","normalize","want","fell","well","charizard","pikachu","pokemon","harry potter","tale of the lost cities","off","let","computer","mommy","hugo","eliana","markus","smelly fart","rotten onions","up","tickle","i like warm hugs","star wars", "decorated","gold bar"];
 
 
 // The init function is called when the page loads 
@@ -26,17 +25,19 @@ function init() {
   getWins();
   getlosses();
   timerElement.textContent = 10;
+  
 }
 
 // The startGame function is called when the start button is clicked
 function startGame() {
     //initialize word
+    chosenWord="";
     blanksLetters = [];//reset
     timerElement.textContent="10";
     chosenWord=words[Math.floor(Math.random()*words.length)];
     console.log(chosenWord);
     
-    //converts chosenword into array
+    //converts chosen word into array
     lettersInChosenWord=chosenWord.split("");
     //loop the word length
     //initialize blanks array
@@ -81,7 +82,8 @@ function startTimer() {
         timerElement.textContent = "You Win";
         winGame();
         isWin=false;
-      
+        timerCount=0;
+        return;
         
         }
     }
@@ -91,6 +93,8 @@ function startTimer() {
         clearInterval(timer);
         timerElement.textContent = "You Lost";
         loseGame();
+        timerCount=0;
+        return;
         
         
    }
